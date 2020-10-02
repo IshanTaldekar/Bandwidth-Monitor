@@ -21,6 +21,20 @@ using std::filebuf;
 using std::istream;
 using std::atol;
 
+/* Function declarations */
+int monitor_usage();
+void process_packet(u_char*, const struct pcap_pkthdr*, const u_char*);
+void write_to_log(struct Data, struct tm*);
+void next_write_timer(int);
+void prepare_weekly_report();
+void update_daily_max_utilization(vector<Data>&, vector<int>&, Data&, int);
+bool greater_than(Data&, Data&);
+Data compute_last_week_usage(Data[7]);
+vector<int> identify_common_timeslots(const vector<vector<int>>&);
+vector<int> vector_intersection(const vector<int>&, const vector<int>&);
+vector<Data> compute_heavy_use_averages(const vector<vector<Data>>&, const vector<vector<int>>&, const vector<int>&);
+string send_email_system_call();
+
 struct Data {
 /* container for bandwidth use information */
 
@@ -37,26 +51,12 @@ struct Data {
 static constexpr long int bytes_in_megabyte {1048576};
 static constexpr long int megabytes_in_gigabyte {1024};
 struct tm * timeinfo;
-bool timer_ticking {false};
 mutex write_lock;
 ofstream output_file ("packet_monitor.log", ofstream::out | ofstream::trunc & ofstream::app);
 Data data_piped;
+bool timer_ticking {false};
 char current_working_directory[1024];
 char* status {getcwd(current_working_directory, 1024)};
-
-/* Function declarations */
-int monitor_usage();
-void process_packet(u_char*, const struct pcap_pkthdr*, const u_char*);
-void write_to_log(struct Data, struct tm*);
-void next_write_timer(int);
-void prepare_weekly_report();
-void update_daily_max_utilization(vector<Data>&, vector<int>&, Data&, int);
-bool greater_than(Data&, Data&);
-Data compute_last_week_usage(Data[7]);
-vector<int> identify_common_timeslots(const vector<vector<int>>&);
-vector<int> vector_intersection(const vector<int>&, const vector<int>&);
-vector<Data> compute_heavy_use_averages(const vector<vector<Data>>&, const vector<vector<int>>&, const vector<int>&);
-string send_email_system_call();
 
 int main() {
 /* Start a daemon process that will run in the background to collect and log data on internet usage */
@@ -87,7 +87,7 @@ int monitor_usage() {
 
     }
 
-    pcap_loop(handle, -1, process_packet, nullptr);
+    if (pcap_loop(handle, -1, process_packet, nullptr) == -1) return (EXIT_FAILURE);
 
     pcap_close(handle);
     output_file.close();
@@ -99,8 +99,9 @@ int monitor_usage() {
 void process_packet(u_char* args, const struct pcap_pkthdr* header, const u_char* packet) {
 
     struct tm* capture_time{localtime(&header->ts.tv_sec)};
-    static int days_count {7};
-    static int hours_since_decrement {0};
+    static int days_count {7};  // days before a report is sent
+
+    static int hours_since_decrement {0};  // acts as redundancy check when counting days.
     static bool decrement_possible_flag {true};
 
     if (!timer_ticking) {
@@ -123,8 +124,8 @@ void process_packet(u_char* args, const struct pcap_pkthdr* header, const u_char
         timeinfo = capture_time;
         timer_ticking = true;
 
-        thread timer(next_write_timer, (60 * 60 * 60) - ((timeinfo->tm_min * 60) + timeinfo->tm_sec));
-        timer.detach();
+        thread timer_thread(next_write_timer, (60 * 60 * 60) - ((timeinfo->tm_min * 60) + timeinfo->tm_sec));
+        timer_thread.detach();
 
         if (days_count == 0) {
 
@@ -155,7 +156,6 @@ void process_packet(u_char* args, const struct pcap_pkthdr* header, const u_char
 
     }
 
-
     write_lock.unlock();
 
 }
@@ -172,6 +172,7 @@ void write_to_log(struct Data pipe_size, struct tm* time) {
 }
 
 void next_write_timer(int seconds_counter) {
+/* starts a timer and writes to a file when it expires */
 
     sleep(seconds_counter);
 
@@ -192,6 +193,7 @@ void next_write_timer(int seconds_counter) {
 }
 
 void prepare_weekly_report() {
+/* writes a report which is mailed to the user.  */
 
     filebuf input_fb;
     istream input_stream {input_fb.open("packet_monitor.log", std::ios::in)};
@@ -268,7 +270,6 @@ void prepare_weekly_report() {
     vector<Data> heavy_use_stats {compute_heavy_use_averages(daily_max_utilization_values, daily_max_utilization_hours, heavy_use_hours)};
     Data average_daily_usage;
 
-
     average_daily_usage.gigabytes = weeks_usage.gigabytes / 7;
     average_daily_usage.megabytes = (weeks_usage.gigabytes % 7) * megabytes_in_gigabyte;
     average_daily_usage.megabytes += weeks_usage.megabytes;
@@ -276,6 +277,7 @@ void prepare_weekly_report() {
     average_daily_usage.megabytes = average_daily_usage.megabytes / 7;
     average_daily_usage.bytes = (average_daily_usage.bytes + weeks_usage.bytes) / 7;
 
+    /* report formatting */
     ofstream report_file("report.txt", ofstream::out | ofstream::trunc & ofstream::app);
 
     string header {"BANDWIDTH MONITOR REPORT (" + tokens[4] + "/" + (to_string(stoi(tokens[5]) - 7)) + "/" + tokens[7]};
@@ -316,6 +318,8 @@ void prepare_weekly_report() {
 
     string command {send_email_system_call()};
     system(command.c_str());
+
+    pthread_exit(nullptr);
 
 }
 
