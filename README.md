@@ -15,4 +15,4 @@ The program can be compiled and executed from the terminal using the commands.
 g++ monitor.cpp -lpcap -pthread -o monitor
 sudo ./monitor
 ```
-## Testing and output
+## Output
