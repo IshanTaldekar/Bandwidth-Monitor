@@ -9,6 +9,8 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <unordered_set>
+using std::unordered_set;
 using std::system;
 using std::vector;
 using std::string;
@@ -21,7 +23,7 @@ using std::filebuf;
 using std::istream;
 using std::atol;
 
-/* Function declarations */
+/* Function declarations: */
 int monitor_usage();
 void process_packet(u_char*, const struct pcap_pkthdr*, const u_char*);
 void write_to_log(struct Data, struct tm*);
@@ -36,7 +38,7 @@ vector<Data> compute_heavy_use_averages(const vector<vector<Data>>&, const vecto
 string send_email_system_call();
 
 struct Data {
-/* container for bandwidth use information */
+    /* container for bandwidth use information */
 
     long int bytes {};
     long int megabytes {};
@@ -47,7 +49,7 @@ struct Data {
 
 };
 
-/* Globals */
+/* Globals: */
 static constexpr long int bytes_in_megabyte {1048576};
 static constexpr long int megabytes_in_gigabyte {1024};
 struct tm * timeinfo;
@@ -59,7 +61,7 @@ char current_working_directory[1024];
 char* status {getcwd(current_working_directory, 1024)};
 
 int main() {
-/* Start a daemon process that will run in the background to collect and log data on internet usage */
+    /* Start a daemon process that will run in the background to collect and log data on internet usage */
 
     pid_t pid = fork();
 
@@ -73,7 +75,7 @@ int main() {
 }
 
 int monitor_usage() {
-/* packet sniffer to capture packets sent and received by the system */
+    /* packet sniffer to capture packets sent and received by the system */
 
     char err_buf[PCAP_ERRBUF_SIZE];
     pcap_t* handle {};  // session handle
@@ -132,7 +134,7 @@ void process_packet(u_char* args, const struct pcap_pkthdr* header, const u_char
             thread report_writer(prepare_weekly_report);
             report_writer.detach();
 
-            days_count = 7;
+            days_count = 0;
 
         }
 
@@ -172,7 +174,7 @@ void write_to_log(struct Data pipe_size, struct tm* time) {
 }
 
 void next_write_timer(int seconds_counter) {
-/* starts a timer and writes to a file when it expires */
+    /* starts a timer and writes to a file when it expires */
 
     sleep(seconds_counter);
 
@@ -193,7 +195,7 @@ void next_write_timer(int seconds_counter) {
 }
 
 void prepare_weekly_report() {
-/* writes a report which is mailed to the user.  */
+    /* writes a report which is mailed to the user.  */
 
     filebuf input_fb;
     istream input_stream {input_fb.open("packet_monitor.log", std::ios::in)};
@@ -324,6 +326,7 @@ void prepare_weekly_report() {
 }
 
 Data compute_last_week_usage(Data daily_usage[7]) {
+    /* Compute the total data used in the week */
 
     Data total_usage;
 
@@ -356,6 +359,7 @@ Data compute_last_week_usage(Data daily_usage[7]) {
 }
 
 vector<int> identify_common_timeslots(const vector<vector<int>>& daily_max_utilization_hours) {
+    /* determine the common high use time-slots */
 
     vector <int> time_slots { daily_max_utilization_hours.at(0) };
     for (int i = 1; i < 7; ++i) time_slots = vector_intersection(time_slots, daily_max_utilization_hours.at(i));
@@ -365,17 +369,24 @@ vector<int> identify_common_timeslots(const vector<vector<int>>& daily_max_utili
 }
 
 vector<int> vector_intersection(const vector<int>& list1, const vector<int>& list2) {
+    /* identify common elements in list 1 and list2 */
 
-    vector<int> commons;
+    vector<int> common;
+    unordered_set<int> list1_unique;
+    unordered_set<int> list2_unique;
 
-    for (int list1_hour: list1) {
+    for (const int & element: list1) list1_unique.insert({element});
+    for (const int & element: list2) list2_unique.insert({element});
 
-        for (int list2_hour: list2) {
+    if (list1_unique.size() < list2_unique.size()) {
 
-            if (list1_hour == list2_hour) {
+        for (auto it1 = list1_unique.begin(); it1 != list1_unique.end(); ++it1) {
 
-                commons.push_back(list1_hour);
-                break;
+            auto it2 {list2_unique.find(*it1)};
+
+            if (it2 != list2_unique.end()) {
+
+                common.push_back(*it2);
 
             }
 
@@ -383,7 +394,7 @@ vector<int> vector_intersection(const vector<int>& list1, const vector<int>& lis
 
     }
 
-    return commons;
+    return common;
 
 }
 
