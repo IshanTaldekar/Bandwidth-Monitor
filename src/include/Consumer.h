@@ -1,0 +1,8 @@
+//
+// Created by wasp on 9/25/23.
+//
+
+#ifndef BANDWIDTH_MONITOR_CONSUMER_H
+#define BANDWIDTH_MONITOR_CONSUMER_H
+
+#endif //BANDWIDTH_MONITOR_CONSUMER_H
