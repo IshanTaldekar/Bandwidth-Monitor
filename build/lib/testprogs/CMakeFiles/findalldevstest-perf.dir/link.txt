@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/findalldevstest-perf.dir/findalldevstest-perf.c.o -o ../../run/findalldevstest-perf  ../libpcap.a -ldbus-1 

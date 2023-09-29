@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/filtertest.dir/filtertest.c.o -o ../../run/filtertest  ../libpcap.a -ldbus-1 

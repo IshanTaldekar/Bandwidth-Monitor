@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/fuzz_both.dir/onefile.c.o CMakeFiles/fuzz_both.dir/fuzz_both.c.o -o ../../../run/fuzz_both  ../../libpcap.a -ldbus-1 

@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/threadsignaltest.dir/threadsignaltest.c.o -o ../../run/threadsignaltest  ../libpcap.a -ldbus-1 

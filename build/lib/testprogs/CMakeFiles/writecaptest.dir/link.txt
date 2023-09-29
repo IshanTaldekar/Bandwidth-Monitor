@@ -1,0 +1,1 @@
+/usr/bin/cc -rdynamic CMakeFiles/writecaptest.dir/writecaptest.c.o -o ../../run/writecaptest  ../libpcap.a -ldbus-1 
