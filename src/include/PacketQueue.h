@@ -8,9 +8,9 @@
 template <typename T>
 class PacketQueue: public std::queue<T> {
     int buffer_size = 1024;
-    static PacketQueue<T> *current_instance;
 
 public:
+    static PacketQueue<T> *current_instance;
     static PacketQueue<T> *init();
 
     T get();

@@ -8,12 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/wasp/Code/Bandwidth-Monitor/src/Analyzer.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Config.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Monitor.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Packet.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/PacketQueue.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d"
+  "/home/wasp/Code/Bandwidth-Monitor/src/Usage.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o.d"
   )
 
 # Targets to which this target links.

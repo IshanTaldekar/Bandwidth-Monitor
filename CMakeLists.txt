@@ -5,11 +5,13 @@ add_subdirectory(lib)
 
 add_executable(
         Bandwidth_Monitor
-        src/PacketQueue.cpp
         src/Config.cpp
+        src/PacketQueue.cpp
+        src/Packet.cpp
         src/Consumer.cpp
         src/Producer.cpp
-        src/Packet.cpp
+        src/Usage.cpp
+        src/Analyzer.cpp
         src/Monitor.cpp
 )
 

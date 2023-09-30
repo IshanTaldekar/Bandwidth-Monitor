@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "Bandwidth_Monitor"
   "Bandwidth_Monitor.pdb"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o.d"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o.d"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o.d"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

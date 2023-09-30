@@ -1,6 +1,7 @@
 #include "include/Consumer.h"
 
 PacketQueue<Packet> *Consumer::packet_queue = PacketQueue<Packet>::init();
+Analyzer *Consumer::analyzer = Analyzer::init();
 
 void Consumer::run() {
     while (true) {
@@ -19,7 +20,8 @@ void Consumer::processAllPackets() {
 
         if (current_week != current_packet.getWeekNumber()) {
             current_week = current_packet.getWeekNumber();
-
+            analyzer->setCurrentWeek(current_week);
+            analytics_condition_variable.notify_one();
         }
 
         std::ofstream weekly_packet_log_file ("../logs/" + std::to_string(current_packet.getWeekNumber()) + ".log", std::ofstream::out | std::ofstream::app);

@@ -7,7 +7,7 @@
 
 class Packet {
     const int DAYS_IN_WEEK = 7;
-    const std::string DATE_TIME_FORMAT = "%Y-%m-%d@%H:%M:%S";
+    const std::string DATE_TIME_FORMAT = "%Y-%m-%d %A %H:%M:%S";
 
     timeval timestamp {};
     unsigned int bytes;

@@ -421,6 +421,30 @@ fuzz_both/fast:
 	$(MAKE) $(MAKESILENT) -f lib/testprogs/fuzz/CMakeFiles/fuzz_both.dir/build.make lib/testprogs/fuzz/CMakeFiles/fuzz_both.dir/build
 .PHONY : fuzz_both/fast
 
+src/Analyzer.o: src/Analyzer.cpp.o
+.PHONY : src/Analyzer.o
+
+# target to build an object file
+src/Analyzer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o
+.PHONY : src/Analyzer.cpp.o
+
+src/Analyzer.i: src/Analyzer.cpp.i
+.PHONY : src/Analyzer.i
+
+# target to preprocess a source file
+src/Analyzer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.i
+.PHONY : src/Analyzer.cpp.i
+
+src/Analyzer.s: src/Analyzer.cpp.s
+.PHONY : src/Analyzer.s
+
+# target to generate assembly for a file
+src/Analyzer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.s
+.PHONY : src/Analyzer.cpp.s
+
 src/Config.o: src/Config.cpp.o
 .PHONY : src/Config.o
 
@@ -565,6 +589,30 @@ src/Producer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s
 .PHONY : src/Producer.cpp.s
 
+src/Usage.o: src/Usage.cpp.o
+.PHONY : src/Usage.o
+
+# target to build an object file
+src/Usage.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o
+.PHONY : src/Usage.cpp.o
+
+src/Usage.i: src/Usage.cpp.i
+.PHONY : src/Usage.i
+
+# target to preprocess a source file
+src/Usage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.i
+.PHONY : src/Usage.cpp.i
+
+src/Usage.s: src/Usage.cpp.s
+.PHONY : src/Usage.s
+
+# target to generate assembly for a file
+src/Usage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.s
+.PHONY : src/Usage.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -597,6 +645,9 @@ help:
 	@echo "... threadsignaltest"
 	@echo "... valgrindtest"
 	@echo "... writecaptest"
+	@echo "... src/Analyzer.o"
+	@echo "... src/Analyzer.i"
+	@echo "... src/Analyzer.s"
 	@echo "... src/Config.o"
 	@echo "... src/Config.i"
 	@echo "... src/Config.s"
@@ -615,6 +666,9 @@ help:
 	@echo "... src/Producer.o"
 	@echo "... src/Producer.i"
 	@echo "... src/Producer.s"
+	@echo "... src/Usage.o"
+	@echo "... src/Usage.i"
+	@echo "... src/Usage.s"
 .PHONY : help
 
 
