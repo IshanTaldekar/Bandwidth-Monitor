@@ -101,7 +101,14 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o: \
  /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
  /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/error_t.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+ /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/linux/close_range.h \
  /home/wasp/Code/Bandwidth-Monitor/src/include/Producer.h \
  /home/wasp/Code/Bandwidth-Monitor/lib/pcap.h \
  /home/wasp/Code/Bandwidth-Monitor/lib/pcap/pcap.h \
@@ -212,4 +219,6 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /home/wasp/Code/Bandwidth-Monitor/src/include/Analyzer.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /home/wasp/Code/Bandwidth-Monitor/src/include/Usage.h
+ /home/wasp/Code/Bandwidth-Monitor/src/include/Usage.h \
+ /home/wasp/Code/Bandwidth-Monitor/src/include/Analyzer.h \
+ /home/wasp/Code/Bandwidth-Monitor/src/include/Reporter.h

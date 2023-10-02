@@ -1,0 +1,17 @@
+
+     BANDWIDTH MONITOR REPORT (2023-09-30 to 2023-09-30)
+------------------------------------------------------------------
+
+1. Total Bandwidth Consumed -> 0GB, 105MB, 147KB, 664B
+
+2. Daily Usage Statistics
+[+] 2023-09-30 (Saturday) -> 0GB, 105MB, 147KB, 664B
+
+
+2. Daily Usage Statistics
+[+] 2023-09-30 (Saturday) -> 0GB, 105MB, 147KB, 664B
+
+3. Daily Heavy Usage Statistics
+[+] 2023-09-30 (Saturday) @21:00:00 -> 0GB, 31MB, 253KB, 187B
+
+******************************************************************

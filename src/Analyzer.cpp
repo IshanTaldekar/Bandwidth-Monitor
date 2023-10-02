@@ -3,8 +3,8 @@
 Analyzer* Analyzer::current_instance = nullptr;
 
 Analyzer::Analyzer() {
-    this->week_in_process = -1;
-    this->week_to_analyze = -1;
+    this->analysis_week = 0;
+    this->analysis_ready = false;
 }
 
 Analyzer *Analyzer::init() {
@@ -18,28 +18,30 @@ Analyzer *Analyzer::init() {
 void Analyzer::run() {
     while (true) {
         std::unique_lock<std::mutex> analyzer_lock (analyzer_mutex);
-        analytics_condition_variable.wait(analyzer_lock, [this] { return this->week_in_process != this->week_to_analyze; });
+        analyzer_condition_variable.wait(analyzer_lock, [this] { return this->processing_queue.size() == 2; });
+
+        this->analysis_week = this->processing_queue.front();
+        this->processing_queue.pop();
 
         this->processLogs();
         this->generateDailyMetrics();
         this->generateWeeklyMetrics();
+
+        this->analysis_ready = true;
+
+        reporter_condition_variable.notify_one();
     }
 }
 
 void Analyzer::setCurrentWeek(int current_week) {
-    if (this->week_to_analyze == -1) {
-        this->week_to_analyze = current_week;
-    }
-
-    this->week_in_process = current_week;
+    this->processing_queue.push(current_week);
 }
 
 void Analyzer::processLogs() {
-    this->weekdates.clear();
     this->processed_hourly_bandwidth = std::vector<std::vector<Usage>>(DAYS_IN_WEEK, std::vector<Usage>(HOURS_IN_DAY, Usage()));
     int current_day_in_week = -1;
 
-    std::ifstream weekly_packet_log_file ("../logs/" + std::to_string(week_to_analyze) + ".log", std::ifstream::in);
+    std::ifstream weekly_packet_log_file ("../logs/" + std::to_string(this->analysis_week) + ".log", std::ifstream::in);
     std::string line;
 
     while (std::getline(weekly_packet_log_file, line, '\n')) {
@@ -56,7 +58,6 @@ void Analyzer::processLogs() {
     }
 
     weekly_packet_log_file.close();
-    this->week_to_analyze = this->week_in_process;
 }
 
 std::vector<std::string> Analyzer::tokenizeLine(const std::string &line) {
@@ -100,7 +101,6 @@ HourMinuteSecond Analyzer::processTimestamp(const std::string &timestamp) {
 
 void Analyzer::generateDailyMetrics() {
     this->processed_daily_bandwidth = std::vector<Usage>(DAYS_IN_WEEK, Usage());
-    this->processed_daily_max_usage = std::vector<int>{};
 
     for (int i = 0; i < DAYS_IN_WEEK; ++i) {
         int current_daily_max_index = 0;
@@ -118,8 +118,6 @@ void Analyzer::generateDailyMetrics() {
 }
 
 void Analyzer::generateWeeklyMetrics() {
-    this->processed_weekly_bandwidth.reset();
-
     for (int i = 0; i < DAYS_IN_WEEK; ++i) {
         this->processed_weekly_bandwidth.addUsage(this->processed_daily_bandwidth.at(i));
     }
@@ -149,7 +147,7 @@ Usage Analyzer::getDayUsage(int day) {
     return this->processed_daily_bandwidth.at(day);
 }
 
-Usage Analyzer::getDayHourlyMax(int day) {
+Usage Analyzer::getDayMaxHourlyUsage(int day) {
     if (day >= this->processed_daily_max_usage.size() || day < 0) {
         return Usage {};
     }
@@ -157,6 +155,40 @@ Usage Analyzer::getDayHourlyMax(int day) {
     return this->processed_hourly_bandwidth.at(day).at(this->processed_daily_max_usage.at(day));
 }
 
+int Analyzer::getDayMaxHourlyUsageHour(int day) {
+    if (day >= this->processed_daily_max_usage.size() || day < 0) {
+        return -1;
+    }
+
+    return this->processed_daily_max_usage.at(day);
+}
+
 Usage Analyzer::getWeekUsage() {
     return this->processed_weekly_bandwidth;
+}
+
+int Analyzer::getCurrentWeek() {
+    return this->analysis_week;
+}
+
+bool Analyzer::isAnalysisReady() {
+    return this->analysis_ready;
+}
+
+void Analyzer::analysisProcessed() {
+    this->weekdates.clear();
+    this->weekdays.clear();
+    this->processed_hourly_bandwidth.clear();
+    this->processed_daily_bandwidth.clear();
+    this->processed_daily_max_usage.clear();
+    this->processed_weekly_bandwidth.reset();
+    this->analysis_ready = false;
+}
+
+std::string Analyzer::getWeekStartDate() {
+    return this->weekdates.front();
+}
+
+std::string Analyzer::getWeekEndDate() {
+    return this->weekdates.at(this->weekdates.size() - 1);
 }

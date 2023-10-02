@@ -177,4 +177,7 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/refwrap.h /usr/include/c++/11/bits/unique_ptr.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/ext/concurrence.h
+ /usr/include/c++/11/ext/concurrence.h \
+ /home/wasp/Code/Bandwidth-Monitor/src/include/Analyzer.h \
+ /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
+ /home/wasp/Code/Bandwidth-Monitor/src/include/Usage.h

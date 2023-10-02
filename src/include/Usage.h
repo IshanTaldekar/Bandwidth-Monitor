@@ -7,11 +7,11 @@
 
 class Usage {
     int bytes;
+    int kilobytes;
     int megabytes;
     int gigabytes;
 
-    const int BYTES_IN_MEGABYTE = 1048576;
-    const int MEGABYTES_IN_GIGABYTE = 1024;
+    const int CONVERSION_FACTOR = 1024;
 
 public:
     Usage();
@@ -22,6 +22,7 @@ public:
     [[nodiscard]] int getBytes() const;
     [[nodiscard]] int getMegabytes() const;
     [[nodiscard]] int getGigabytes() const;
+    [[nodiscard]] int getKilobytes() const;
 
     void reset();
 

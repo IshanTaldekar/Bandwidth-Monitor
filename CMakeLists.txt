@@ -8,10 +8,11 @@ add_executable(
         src/Config.cpp
         src/PacketQueue.cpp
         src/Packet.cpp
-        src/Consumer.cpp
-        src/Producer.cpp
         src/Usage.cpp
         src/Analyzer.cpp
+        src/Reporter.cpp
+        src/Consumer.cpp
+        src/Producer.cpp
         src/Monitor.cpp
 )
 

@@ -111,38 +111,10 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Packet.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.s
 
-CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
-CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: ../src/Consumer.cpp
-CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp
-
-CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp > CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i
-
-CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s
-
-CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
-CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: ../src/Producer.cpp
-CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp
-
-CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp > CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i
-
-CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s
-
 CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
 CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o: ../src/Usage.cpp
 CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Usage.cpp
 
 CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.i: cmake_force
@@ -156,7 +128,7 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.s: cmake_force
 CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
 CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o: ../src/Analyzer.cpp
 CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Analyzer.cpp
 
 CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.i: cmake_force
@@ -167,10 +139,52 @@ CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Analyzer.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.s
 
+CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
+CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o: ../src/Reporter.cpp
+CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Reporter.cpp
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wasp/Code/Bandwidth-Monitor/src/Reporter.cpp > CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.i
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Reporter.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.s
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
+CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: ../src/Consumer.cpp
+CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp > CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.i
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Consumer.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.s
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
+CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: ../src/Producer.cpp
+CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp > CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.i
+
+CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp -o CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s
+
 CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/flags.make
 CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o: ../src/Monitor.cpp
 CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o: CMakeFiles/Bandwidth_Monitor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o -MF CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o.d -o CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o -c /home/wasp/Code/Bandwidth-Monitor/src/Monitor.cpp
 
 CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.i: cmake_force
@@ -186,10 +200,11 @@ Bandwidth_Monitor_OBJECTS = \
 "CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o" \
 "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o" \
 "CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o" \
-"CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o" \
-"CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o" \
 "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o" \
 "CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o" \
+"CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o" \
+"CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o" \
+"CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o" \
 "CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o"
 
 # External object files for target Bandwidth_Monitor
@@ -198,16 +213,17 @@ Bandwidth_Monitor_EXTERNAL_OBJECTS =
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Config.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o
-Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o
-Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Analyzer.cpp.o
+Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o
+Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Consumer.cpp.o
+Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/src/Monitor.cpp.o
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/build.make
 Bandwidth_Monitor: lib/libpcap.so.1.11.0-PRE-GIT
 Bandwidth_Monitor: /usr/lib/x86_64-linux-gnu/libdbus-1.so
 Bandwidth_Monitor: CMakeFiles/Bandwidth_Monitor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Bandwidth_Monitor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/wasp/Code/Bandwidth-Monitor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Bandwidth_Monitor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Bandwidth_Monitor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

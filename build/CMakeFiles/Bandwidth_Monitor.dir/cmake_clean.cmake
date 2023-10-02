@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o.d"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o"
+  "CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o.d"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o"
   "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o.d"
 )

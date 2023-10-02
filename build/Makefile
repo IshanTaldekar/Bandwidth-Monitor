@@ -589,6 +589,30 @@ src/Producer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.s
 .PHONY : src/Producer.cpp.s
 
+src/Reporter.o: src/Reporter.cpp.o
+.PHONY : src/Reporter.o
+
+# target to build an object file
+src/Reporter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o
+.PHONY : src/Reporter.cpp.o
+
+src/Reporter.i: src/Reporter.cpp.i
+.PHONY : src/Reporter.i
+
+# target to preprocess a source file
+src/Reporter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.i
+.PHONY : src/Reporter.cpp.i
+
+src/Reporter.s: src/Reporter.cpp.s
+.PHONY : src/Reporter.s
+
+# target to generate assembly for a file
+src/Reporter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Bandwidth_Monitor.dir/build.make CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.s
+.PHONY : src/Reporter.cpp.s
+
 src/Usage.o: src/Usage.cpp.o
 .PHONY : src/Usage.o
 
@@ -666,6 +690,9 @@ help:
 	@echo "... src/Producer.o"
 	@echo "... src/Producer.i"
 	@echo "... src/Producer.s"
+	@echo "... src/Reporter.o"
+	@echo "... src/Reporter.i"
+	@echo "... src/Reporter.s"
 	@echo "... src/Usage.o"
 	@echo "... src/Usage.i"
 	@echo "... src/Usage.s"

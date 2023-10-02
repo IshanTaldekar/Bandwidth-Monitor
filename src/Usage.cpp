@@ -2,6 +2,7 @@
 
 Usage::Usage() {
     this->bytes = 0;
+    this->kilobytes = 0;
     this->megabytes = 0;
     this->gigabytes = 0;
 }
@@ -9,13 +10,18 @@ Usage::Usage() {
 void Usage::addBytes(int bytes_processed) {
     this->bytes += bytes_processed;
 
-    if (this->bytes >= BYTES_IN_MEGABYTE) {
-        this->bytes %= BYTES_IN_MEGABYTE;
+    if (this->bytes >= CONVERSION_FACTOR) {
+        this->bytes %= CONVERSION_FACTOR;
+        ++this->kilobytes;
+    }
+
+    if (this->kilobytes >= CONVERSION_FACTOR) {
+        this->kilobytes %= CONVERSION_FACTOR;
         ++this->megabytes;
     }
 
-    if (this->megabytes >= MEGABYTES_IN_GIGABYTE) {
-        this->megabytes %= MEGABYTES_IN_GIGABYTE;
+    if (this->megabytes >= CONVERSION_FACTOR) {
+        this->megabytes %= CONVERSION_FACTOR;
         ++this->gigabytes;
     }
 }
@@ -23,16 +29,23 @@ void Usage::addBytes(int bytes_processed) {
 void Usage::addUsage(const Usage &usage) {
     this->bytes += usage.getBytes();
 
-    if (this->bytes >= BYTES_IN_MEGABYTE) {
-        this->megabytes += (this->bytes / BYTES_IN_MEGABYTE);
-        this->megabytes %= BYTES_IN_MEGABYTE;
+    if (this->bytes >= CONVERSION_FACTOR) {
+        this->kilobytes += (this->bytes / CONVERSION_FACTOR);
+        this->bytes %= CONVERSION_FACTOR;
+    }
+
+    this->kilobytes += usage.getKilobytes();
+
+    if (this->kilobytes >= CONVERSION_FACTOR) {
+        this->megabytes += (this->kilobytes / CONVERSION_FACTOR);
+        this->kilobytes %= CONVERSION_FACTOR;
     }
 
     this->megabytes += usage.getMegabytes();
 
-    if (this->megabytes >= MEGABYTES_IN_GIGABYTE) {
-        this->gigabytes += (this->megabytes / MEGABYTES_IN_GIGABYTE);
-        this->megabytes %= MEGABYTES_IN_GIGABYTE;
+    if (this->megabytes >= CONVERSION_FACTOR) {
+        this->gigabytes += (this->megabytes / CONVERSION_FACTOR);
+        this->megabytes %= CONVERSION_FACTOR;
     }
 
     this->gigabytes += usage.gigabytes;
@@ -48,6 +61,10 @@ int Usage::getMegabytes() const {
 
 int Usage::getGigabytes() const {
     return this->gigabytes;
+}
+
+int Usage::getKilobytes() const {
+    return this->kilobytes;
 }
 
 bool Usage::operator > (const Usage &other) const {

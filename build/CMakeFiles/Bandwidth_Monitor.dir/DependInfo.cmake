@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wasp/Code/Bandwidth-Monitor/src/Packet.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Packet.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/PacketQueue.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/PacketQueue.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Producer.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Producer.cpp.o.d"
+  "/home/wasp/Code/Bandwidth-Monitor/src/Reporter.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Reporter.cpp.o.d"
   "/home/wasp/Code/Bandwidth-Monitor/src/Usage.cpp" "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o" "gcc" "CMakeFiles/Bandwidth_Monitor.dir/src/Usage.cpp.o.d"
   )
 
